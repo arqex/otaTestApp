@@ -6,7 +6,8 @@ import * as Updates from 'expo-updates';
 export default class Root extends React.Component {
 	state = {
 		status: 'INIT',
-		error: ''
+		error: '',
+		manifestId: ''
 	}
 
   render() {
@@ -19,7 +20,7 @@ export default class Root extends React.Component {
 
 		return (
 			<View style={ styles }>
-				<Text>Version 3</Text>
+				<Text>Version 1</Text>
 				<Text>{ this.getText() }</Text>
 				<Text>{ this.state.error }</Text>
 			</View>
