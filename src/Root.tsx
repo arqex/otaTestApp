@@ -1,13 +1,13 @@
 
 import * as React from 'react';
-import {View, Text} from 'react-native';
+import {ScrollView, Text} from 'react-native';
 import * as Updates from 'expo-updates';
 
 export default class Root extends React.Component {
 	state = {
 		status: 'INIT',
 		error: '',
-		manifestId: ''
+		manifest: ''
 	}
 
   render() {
@@ -19,11 +19,12 @@ export default class Root extends React.Component {
 		};
 
 		return (
-			<View style={ styles }>
+			<ScrollView style={ styles }>
 				<Text>Version 1</Text>
 				<Text>{ this.getText() }</Text>
+				<Text>{ 'Current: ' + JSON.stringify( Updates.manifest ) }</Text>
 				<Text>{ this.state.error }</Text>
-			</View>
+			</ScrollView>
 		);
 	}
 
@@ -48,19 +49,9 @@ export default class Root extends React.Component {
 		this.setState({status: 'CHECKING'});
 
 		Updates.checkForUpdateAsync()
-			.then( ({isAvailable}) => {
+			.then( ({isAvailable, manifest}) => {
 				if( isAvailable) {
-					this.setState({status: 'FETCHING'});
-					return Updates.fetchUpdateAsync()
-						.then( ({isNew}) => {
-							if( isNew ){
-								this.setState({status: 'OK'})
-							}
-							else {
-								this.setState({status: 'NO_UPDATE'})
-							}
-						})
-					;
+					return this.fetchUpdate( manifest );
 				}
 				else {
 					this.setState({status:'NO_UPDATE'})
@@ -71,6 +62,21 @@ export default class Root extends React.Component {
 					status: 'WTF',
 					error: error.toString()
 				});
+			})
+		;
+	}
+
+	fetchUpdate( m ) {
+		this.setState({status: 'FETCHING', manifest: JSON.stringify(m)});
+					
+		return Updates.fetchUpdateAsync()
+			.then( ({isNew, manifest}) => {
+				if( isNew ){
+					this.setState({status: 'OK', manifest: JSON.stringify(manifest)})
+				}
+				else {
+					this.setState({status: 'NO_UPDATE'})
+				}
 			})
 		;
 	}
