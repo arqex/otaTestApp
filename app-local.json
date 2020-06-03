@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "discov",
+    "name": "otatestapp",
     "slug": "mobile",
     "privacy": "public",
     "sdkVersion": "36.0.0",
@@ -27,7 +27,7 @@
       "supportsTablet": true
     },
     "android": {
-      "package": "me.discov.android.app",
+      "package": "me.otatestapp.android.app",
       "config": {
         "googleMaps": {
           "apiKey": "****"

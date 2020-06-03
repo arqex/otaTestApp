@@ -1,6 +1,6 @@
 {
-  "name": "@discov/mobile",
-  "packagename": "discovmobile",
+  "name": "@otatestapp/mobile",
+  "packagename": "otatestapp",
   "scripts": {
     "start": "react-native start",
     "start:local": "expo start --host localhost --config app-local.json",

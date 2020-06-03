@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.discovmobile">
+    package="com.otatestapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
@@ -49,7 +49,7 @@
       <meta-data
         android:name="com.google.android.geo.API_KEY"
         android:value="AIzaSyAyovAYNMAf9yxr1H9k5lbPGfEX_iqQ0dk"/>
-      <meta-data android:name="expo.modules.updates.EXPO_UPDATE_URL" android:value="https://exp.host/@arqex/discovmobile" />
+      <meta-data android:name="expo.modules.updates.EXPO_UPDATE_URL" android:value="https://exp.host/@arqex/otatestapp" />
       <meta-data android:name="expo.modules.updates.EXPO_SDK_VERSION" android:value="37.0.0" />
     </application>
 </manifest>

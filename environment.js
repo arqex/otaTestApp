@@ -1,7 +1,7 @@
 
 import {isEmulator} from 'react-native-device-info';
 
-let baseUrlDev = 'https://gql-dev.discov.me/';
+let baseUrlDev = 'https://gql-dev.otatestapp.me/';
 let baseUrlLocal = 'http://localhost:3000/';
 
 let dev = {

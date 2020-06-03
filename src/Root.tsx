@@ -22,7 +22,7 @@ export default class Root extends React.Component {
 			<ScrollView style={ styles }>
 				<Text>Version 1</Text>
 				<Text>{ this.getText() }</Text>
-				<Text>{ 'Current: ' + JSON.stringify( Updates.manifest ) }</Text>
+				<Text>{ 'Current: ' + JSON.stringify( Updates.updateId  ) }</Text>
 				<Text>{ this.state.error }</Text>
 			</ScrollView>
 		);

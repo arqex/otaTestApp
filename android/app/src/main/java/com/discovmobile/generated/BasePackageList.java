@@ -1,4 +1,4 @@
-package com.discovmobile.generated;
+package com.otatestapp.generated;
 
 import java.util.Arrays;
 import java.util.List;
