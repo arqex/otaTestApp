@@ -34,7 +34,7 @@
     "react": "16.9.0",
     "react-dom": "16.9.0",
     "react-interactable": "^0.6.4",
-    "react-native": "0.61.4",
+    "react-native": "0.62.3",
     "react-native-app-settings": "^2.0.1",
     "react-native-device-info": "^5.5.4",
     "react-native-emoji-input": "^1.1.10",
